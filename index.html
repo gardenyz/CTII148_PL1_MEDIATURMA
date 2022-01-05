@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+    <title>Media da Turma</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <head>
+
+    <body>
+        <center>
+            <table>
+                <script language="javascript">
+                    var mediaGb, mediaF, ind, qtd, porc, aprov, med, i;
+
+                    mediaF = new Array(41);
+                    mediaGb = 0;
+                    qtd = 0;
+                    porc = 0;
+                    aprov = 0;
+                    med = 0;
+
+                    for (ind = 1; ind < mediaF.length; ind++) {
+                       mediaF[ind] = parseFloat(window.prompt("Informe o Numero : "));
+                        med = med + mediaF[ind];
+                    }
+                    mediaGb = med / mediaF.length;
+                    document.write("<tr><td colspan = '3 class ='celula1'>Média global da turma: </td><td class='celula2'>" + mediaGb.toFixed(2) + "</td></tr>");
+
+                    for (ind = 1; ind <= mediaF.length; ind++) {
+                        if (mediaF[ind] > mediaGb) {
+                            qtd++;
+                        }
+                    }
+                    document.write("<tr><td colspan = '3 class ='celula1'>Quantidade de alunos acima da média: </td><td class='celula2'>" + qtd + "</td></tr>");
+
+                    for (ind = 1; ind < mediaF.length; ind++) {
+                        if (mediaF[ind] >= 6.0) {
+                            aprov++;
+                        }
+                    }
+                    porc = (aprov / (mediaF.length-1)) * 100;
+
+                    document.write("<tr><td colspan = '3'class ='celula1'>Percentual de aprovados (média >= 6,0):</td><td  class='celula2'>" + porc.toFixed(2) + "%</td></tr><br>");
+                    document.write("<tr><td colspan= '4' class = 'nada'</td>");
+                    document.write("<tr><td class = 'mini'>Nº do Aluno</td><td class= 'mini' >Média Final </td><td c>Indicativo visual </td>");
+                    document.write("<td class= 'celula2'>Pontos para atingir a aprovação</td></tr>");
+
+                    for (i = 1; i < mediaF.length; i++) {
+                        document.write("<tr><td class ='imag'>" + i + "</td>");
+                        document.write("<td class ='imag'>" + mediaF[i] + "</td>");
+                        if (mediaF[i] >= 6.0) {
+                            document.write("<td class ='imag'><img src='img/POSITIVO.png' height='80' width= '100'></td>");
+                            document.write("<td class ='imag'>---</td>");
+                        }
+                        else {
+                            document.write("<td class ='imag'><img src='img/NEGATIVO.png' height='80' width= '100'></td>");
+                            var pont;
+                            pont = 6.0 - mediaF[i];
+                            document.write("<td class ='imag'>" + pont + "</td>");
+                        }
+                        document.write("</tr>");
+                    }
+                </script>
+
+        </center>
+    </body>
+
+</html>

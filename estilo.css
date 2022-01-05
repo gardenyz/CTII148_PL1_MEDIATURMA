@@ -1,0 +1,40 @@
+body {
+
+    font-family: arial;
+    font-size: 20px;
+    
+}
+table {
+    border: 1px solid black;
+    width: 800px;
+}
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.celula1 {
+    width: 400px;
+    height: 30px;
+}
+
+.celula2 {
+    height: 30px;
+    width: 300px;
+}
+
+.mini {
+    height: 30px;
+    width: 100px;
+}
+
+.imag {
+    height: 100px;
+    width: 200px;
+font-weight: bolder;
+}
+.nada{
+    height: 30px;
+
+}
+
